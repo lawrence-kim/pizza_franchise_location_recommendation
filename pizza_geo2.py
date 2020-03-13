@@ -405,7 +405,7 @@ class myWindows(QDialog):
         m
         map1 = QWebEngineView()
 
-        # must be
+        # must be absolute path
         map1.setUrl(QUrl("C:/Users/user/Documents/Gitspace/PIZZA/Data/Plugins_9.html"))
         leftlayout.addWidget(map1)
         
