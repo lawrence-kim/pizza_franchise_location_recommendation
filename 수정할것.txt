@@ -1,0 +1,11 @@
+project-01.py
+for_sales = pd.read_csv("C:/JIN/BigData/pySpace/TeamProject_ONE조/Data/지역별 평당 매매가.csv")
+commercial = pd.read_csv("C:/JIN/BigData/pySpace/TeamProject_ONE조/Data/전국 상권 최종본.csv")
+singles = pd.read_csv("C:/JIN/BigData/pySpace/TeamProject_ONE조/Data/1인가구.csv")
+cost = pd.read_csv("C:/JIN/BigData/pySpace/TeamProject_ONE조/Data/피자 브랜드별 최소 창업비용.csv")
+
+project-02.py
+web.setUrl(QUrl("C:/JIN/BigData/workSpace/Data/map1.html"))
+
+pizza_geo2.py
+ map1.setUrl(QUrl("C:/JIN/BigData/workSpace/Data/Plugins_9.html"))
