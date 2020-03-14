@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *       # 종료하는 것은 widget만으로 안됨. 추가적으로 import 해줘야 함
+from PyQt5.QtCore import *      
 from PyQt5.QtGui import *
 import matplotlib.pyplot as plt
 import matplotlib
@@ -14,32 +14,30 @@ from matplotlib import font_manager,rc
 import matplotlib as mpl
 import matplotlib.cm as cm
 
-from sklearn.tree import DecisionTreeClassifier      # 0인지 1인지 객관식이기때문에 Classifier로 사용
+from sklearn.tree import DecisionTreeClassifier      
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 
-if platform.system() == "Darwin" :    #Darwin은 MAC OS
+if platform.system() == "Darwin" :    #Darwin is for MAC OS
     rc('font', family = 'AppleGothic')
 elif platform.system() == 'Windows' :
-    path="c:/windows/Fonts/malgun.ttf"      # 210 M고딕050.ttf
+    path="c:/windows/Fonts/malgun.ttf"      # font = 210 M고딕050.ttf
     font_name = font_manager.FontProperties(fname = path).get_name()
     rc('font', family = font_name)
 else :
     print("Unknown System")
 
-
-# 머신러닝
 class machineLearingDialog(QDialog) :
     def __init__(self) :
         super().__init__()
         self.setupUI()
 
     def setupUI(self) :
-        # 윈도우 frame
-        self.setWindowTitle("BRAND INTRODUCE")
-        self.setGeometry(400, 100, 1000, 600)                # (x축 좌표, y축 좌표, x축 크기, y축 크기)
-        self.setWindowIcon(QIcon('logo.png'))          # 왼쪽 상단에 icon 넣기
+        # windows frame
+        self.setWindowTitle("Brand Introduction")
+        self.setGeometry(400, 100, 1000, 600)                
+        self.setWindowIcon(QIcon('logo.png'))          
 
         self.pushButton1 = QPushButton("PIZZASCHOOL")
         self.pushButton1.clicked.connect(self.pushButton1Clicked)
@@ -58,24 +56,12 @@ class machineLearingDialog(QDialog) :
         self.pushButton8 = QPushButton("PIZZAMARU")
         self.pushButton8.clicked.connect(self.pushButton8Clicked)
 
-        #self.text = QPlainTextEdit()
-        
-
         self.label1 = QLabel("\n\n\n\n\n\n\n\n\n\n")
         
         # Figure Canvas
         self.fig = plt.Figure()
         self.canvas = FigureCanvas(self.fig)
 
-        global image
-        #pixmap = QPixmap("‪C:/JIN/BigData/workSpace/Data/피자로고/피자스쿨.png")
-        image = QLabel(self)
-        pixmap = QPixmap("C:/Users/mint/Downloads/noun_pizza-1.png")
-        image.setPixmap(pixmap)
-        image.setGeometry(0, 0, 0, 0)
-        image.show()
-
-        # Layout : V Layout 2개를 나란히 붙이려면 H Layout을 사용해야함
         topLayout = QGridLayout()
         topLayout.addWidget(self.pushButton1, 0, 0)
         topLayout.addWidget(self.pushButton2, 0, 1)
@@ -88,15 +74,13 @@ class machineLearingDialog(QDialog) :
 
         global bottomLayout
         bottomLayout = QVBoxLayout()
-        #bottomLayout.addWidget(image)
         bottomLayout.addWidget(self.label1)
 
         layout = QVBoxLayout()
         layout.addLayout(topLayout)
         layout.addLayout(bottomLayout)
         layout.setStretchFactor(topLayout, 0)
-        layout.setStretchFactor(bottomLayout, 0)  # 0은 크기 조절시 크기 변경 안됨
-
+        layout.setStretchFactor(bottomLayout, 0)  
         self.setLayout(layout)
 
 
@@ -183,33 +167,6 @@ class machineLearingDialog(QDialog) :
         피자스쿨과는 달리 핫소스와 치즈 가루 등이 기본 제공된다.\n
         2019년 7월 현재 전국 652개의 매장을 운영하고 있으며, 부산에는 20개의 매장이 있다.\n""")
 
-
-
-
-class mywindows(QWidget) :
-    def __init__(self) :
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self) :
-        # 윈도우 frame
-        self.setWindowTitle("project-06")
-        self.setGeometry(800, 200, 300, 300)                # (x축 좌표, y축 좌표, x축 크기, y축 크기)
-        self.setWindowIcon(QIcon('light.png'))          # 왼쪽 상단에 icon 넣기
-        
-        self.pushButton = QPushButton('MACHINE LEARNING')  # Button, layout생성해서 사용할 때는 self 없이
-        self.pushButton.clicked.connect(self.pushButtonClicked)
-        self.label = QLabel()
-
-        # Layout 생성
-        layout = QVBoxLayout()
-        layout.addWidget(self.label)
-        layout.addWidget(self.pushButton)
-        self.setLayout(layout)
-    
-    def pushButtonClicked(self) :
-        dlg = machineLearingDialog()        
-        dlg.exec_()
         
     
 if __name__ == "__main__" :
