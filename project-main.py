@@ -22,7 +22,7 @@ class mywindows(QWidget) :
 
         self.pushButton1 = QPushButton('Intro')  
         self.pushButton1.clicked.connect(self.pushButton1Clicked)
-        self.pushButton2 = QPushButton('Ranking')  
+        self.pushButton2 = QPushButton('Data')  
         self.pushButton2.clicked.connect(self.pushButton2Clicked)
         self.pushButton3 = QPushButton('Chart')  
         self.pushButton3.clicked.connect(self.pushButton3Clicked)
@@ -95,18 +95,14 @@ class mywindows(QWidget) :
     def pushButton1Clicked(self) : # intro
         os.system('python project-intro.py')
 
-    def pushButton2Clicked(self) : # ranking using Data
-        os.system('python project-ranking.py')
+    def pushButton2Clicked(self) : # Data
+        os.system('python project-data.py')
 
     def pushButton3Clicked(self) : # chart
         os.system('python project-chart.py')
     
     def pushButton4Clicked(self) : # visualization
         os.system('python project-visualization.py')
-    
-    # def pushButton5Clicked(self) : # pizza store map - better not use
-    #     os.system('python project-storemap.py')
-
         
     def pushButton5Clicked(self) : # ml1 recommend brand by location and budget
         os.system('python project-brandrecommendation.py')
@@ -117,10 +113,6 @@ class mywindows(QWidget) :
     def pushButton7Clicked(self) : # ml2 map according to input location and the number of cluster
         os.system('python project-selectedmap.py')
     
-
-    # def pushButton9Clicked(self) : # map - not used
-    #     os.system('python pizza_project.py')
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
