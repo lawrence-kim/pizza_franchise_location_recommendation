@@ -20,25 +20,23 @@ class mywindows(QWidget) :
         self.setWindowTitle("Pizza brand prediction")
         self.setGeometry(750, 150, 500, 700)               
 
-        self.pushButton1 = QPushButton('BRAND INTRODUCE')  
+        self.pushButton1 = QPushButton('Intro')  
         self.pushButton1.clicked.connect(self.pushButton1Clicked)
-        self.pushButton2 = QPushButton('CHART')  
+        self.pushButton2 = QPushButton('Ranking')  
         self.pushButton2.clicked.connect(self.pushButton2Clicked)
-        self.pushButton3 = QPushButton('VISUALIZATION')  
+        self.pushButton3 = QPushButton('Chart')  
         self.pushButton3.clicked.connect(self.pushButton3Clicked)
-       
-
-        self.pushButton4 = QPushButton('BUSAN MAP')  
+        self.pushButton4 = QPushButton('Visualization')  
         self.pushButton4.clicked.connect(self.pushButton4Clicked)
-
-
-        self.pushButton5 = QPushButton('MACHINE LEARNING 1')  
+        self.pushButton5 = QPushButton('Brand Recommendation')  
         self.pushButton5.clicked.connect(self.pushButton5Clicked)
-        self.pushButton6 = QPushButton('MACHINE LEARNING 2')  
+        self.pushButton6 = QPushButton('Sample Map')  
         self.pushButton6.clicked.connect(self.pushButton6Clicked)
-        self.pushButton7 = QPushButton('USING DATA')  
+        self.pushButton7 = QPushButton('Selected Map')  
         self.pushButton7.clicked.connect(self.pushButton7Clicked)
         self.label1 = QLabel("")
+       
+
 
         self.pushButton1.setSizePolicy(
             QSizePolicy.Preferred,
@@ -79,12 +77,12 @@ class mywindows(QWidget) :
         bottomLayout.addWidget(self.label1, 0, 0)
         bottomLayout.addWidget(self.label1, 0, 2)
         bottomLayout.addWidget(self.pushButton1, 2, 1)
-        bottomLayout.addWidget(self.pushButton7, 3, 1)
-        bottomLayout.addWidget(self.pushButton2, 4, 1)
-        bottomLayout.addWidget(self.pushButton3, 5, 1)
-        bottomLayout.addWidget(self.pushButton4, 6, 1)
-        bottomLayout.addWidget(self.pushButton5, 9, 1)
-        bottomLayout.addWidget(self.pushButton6, 10, 1)
+        bottomLayout.addWidget(self.pushButton2, 3, 1)
+        bottomLayout.addWidget(self.pushButton3, 4, 1)
+        bottomLayout.addWidget(self.pushButton4, 5, 1)
+        bottomLayout.addWidget(self.pushButton5, 6, 1)
+        bottomLayout.addWidget(self.pushButton6, 7, 1)
+        bottomLayout.addWidget(self.pushButton7, 8, 1)
 
         layout = QVBoxLayout()
         layout.addLayout(topLayout)
@@ -94,32 +92,35 @@ class mywindows(QWidget) :
 
         self.setLayout(layout)
     
-    def pushButton1Clicked(self) : # 브랜드 소개
-        os.system('python project-08.py')
+    def pushButton1Clicked(self) : # intro
+        os.system('python project-intro.py')
 
-    def pushButton2Clicked(self) : # chart
-        os.system('python project-01.py')
+    def pushButton2Clicked(self) : # ranking using Data
+        os.system('python project-ranking.py')
+
+    def pushButton3Clicked(self) : # chart
+        os.system('python project-chart.py')
     
-    def pushButton3Clicked(self) : # visualize
-        os.system('python project-02.py')
+    def pushButton4Clicked(self) : # visualization
+        os.system('python project-visualization.py')
     
-    def pushButton4Clicked(self) : # map - 용제씨
-        os.system('python pizzastore.py')
+    # def pushButton5Clicked(self) : # pizza store map - better not use
+    #     os.system('python project-storemap.py')
 
-    def pushButton5Clicked(self) : # machineLearning 1
-        os.system('python project-06.py')
+        
+    def pushButton5Clicked(self) : # ml1 recommend brand by location and budget
+        os.system('python project-brandrecommendation.py')
 
-    def pushButton6Clicked(self) : # machineLearning 2
-        os.system('python pizza_geo2.py')
+    def pushButton6Clicked(self) : # map of all the pizza stores with commercial area clusters
+        os.system('python project-samplemap.py')
+
+    def pushButton7Clicked(self) : # ml2 map according to input location and the number of cluster
+        os.system('python project-selectedmap.py')
     
-    def pushButton7Clicked(self) : # using Data
-        os.system('python project-07.py')
 
-    def pushButton9Clicked(self) : # map - 로렌스씨
-        os.system('python pizza_project.py')
+    # def pushButton9Clicked(self) : # map - not used
+    #     os.system('python pizza_project.py')
 
-    def pushButton10Clicked(self) : # map - 로렌스씨
-        os.system('python pizza_project3.py')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -140,7 +140,7 @@ class visualialog(QDialog) :
 
     def pushButton15Clicked(self) :
         web = QWebEngineView()
-        web.setUrl(QUrl("./Data/map1.html"))
+        web.setUrl(QUrl("C:/Users/user/Documents/Gitspace/PIZZA/Data/map1.html"))
         leftLayout.addWidget(web)
         for i in range(leftLayout.count()):
             leftLayout.itemAt(i).widget().close()
@@ -540,7 +540,7 @@ class Map1(QDialog):
     def init_widget(self):
         self.setWindowTitle("QWebEngineView")
         web = QWebEngineView()
-        web.setUrl(QUrl("C:/JIN/BigData/workSpace/Data/map1.html"))
+        web.setUrl(QUrl("C:/Users/user/Documents/Gitspace/PIZZA/Data/map1.html"))
         
         self.form_layout.addWidget(web)
         #leftLayout.addWidget(self.form_layout)
@@ -556,7 +556,8 @@ class Map2(QDialog):
     def init_widget(self):
         self.setWindowTitle("QWebEngineView")
         web = QWebEngineView()
-        web.setUrl(QUrl("D:/JIN/BigData/workSpace/Data/map2.html"))
+# absolute path 
+        web.setUrl(QUrl("C:/Users/user/Documents/Gitspace/PIZZA/Data/map2.html"))
         self.form_layout.addWidget(web)
 
 class mywindows(QWidget) :
