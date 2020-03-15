@@ -62,7 +62,7 @@ class mywindows(QWidget) :
 
 
         image = QLabel(self)
-        pixmap = QPixmap("./Data/noun_pizza-1.png")
+        pixmap = QPixmap("./Data/main_logo.png")
         image.setPixmap(pixmap)
         image.setGeometry(0, 0, 0, 0)
         image.show()
