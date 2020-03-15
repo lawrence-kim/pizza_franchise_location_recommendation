@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *       # 종료하는 것은 widget만으로 안됨. 추가적으로 import 해줘야 함
+from PyQt5.QtCore import *       
 from PyQt5.QtGui import *
 import matplotlib.pyplot as plt
 import matplotlib
@@ -14,17 +14,15 @@ from matplotlib import font_manager,rc
 import matplotlib as mpl
 import matplotlib.cm as cm
 
-if platform.system() == "Darwin" :    #Darwin은 MAC OS
+if platform.system() == "Darwin" :    #Darwin is for MAC OS
     rc('font', family = 'AppleGothic')
 elif platform.system() == 'Windows' :
-    path="c:/windows/Fonts/malgun.ttf"      # 210 M고딕050.ttf
+    path="c:/windows/Fonts/malgun.ttf"      # font = 210 M고딕050.ttf
     font_name = font_manager.FontProperties(fname = path).get_name()
     rc('font', family = font_name)
 else :
     print("Unknown System")
 
-
-# chart 그리기
 
 class graphDialog(QDialog) :
     def __init__(self) :
@@ -32,20 +30,20 @@ class graphDialog(QDialog) :
         self.setupUI()
 
     def setupUI(self) :
-        # 윈도우 frame
+        # windows frame
         self.setWindowTitle("Chart")
-        self.setGeometry(200, 100, 1600, 800)                # (x축 좌표, y축 좌표, x축 크기, y축 크기)
-        self.setWindowIcon(QIcon('logo.png'))         # 왼쪽 상단에 icon 넣기
+        self.setGeometry(200, 100, 1600, 800)         
+        self.setWindowIcon(QIcon('logo.png'))         
 
-        self.pushButton1 = QPushButton("피자스쿨 점포수")
+        self.pushButton1 = QPushButton("number of Pizza School stores")
         self.pushButton1.clicked.connect(self.pushButton1Clicked)
-        self.pushButton2 = QPushButton("피자헛 점포수")
+        self.pushButton2 = QPushButton("number of Pizza Hut stores")
         self.pushButton2.clicked.connect(self.pushButton2Clicked)
-        self.pushButton3 = QPushButton("도미노피자 점포수")
+        self.pushButton3 = QPushButton("number of Domino Pizza stores")
         self.pushButton3.clicked.connect(self.pushButton3Clicked)
-        self.pushButton4 = QPushButton("미스터피자 점포수")
+        self.pushButton4 = QPushButton("number of Domino's stores")
         self.pushButton4.clicked.connect(self.pushButton4Clicked)
-        self.pushButton5 = QPushButton("전국 브랜드 점포수")
+        self.pushButton5 = QPushButton("number of all the pizza brands")
         self.pushButton5.clicked.connect(self.pushButton5Clicked)
 
         # Figure Canvas
@@ -63,14 +61,13 @@ class graphDialog(QDialog) :
         rightLayout.addWidget(self.pushButton3)
         rightLayout.addWidget(self.pushButton4)
         rightLayout.addWidget(self.pushButton5)
-        rightLayout.addStretch(1)   # 제일 상단에 배치
+        rightLayout.addStretch(1)   
 
-        # Layout : V Layout 2개를 나란히 붙이려면 H Layout을 사용해야함
         layout = QHBoxLayout()
         layout.addLayout(leftLayout)
         layout.addLayout(rightLayout)
         layout.setStretchFactor(leftLayout, 1)
-        layout.setStretchFactor(rightLayout, 0)  # 0은 크기 조절시 크기 변경 안됨
+        layout.setStretchFactor(rightLayout, 0)  
 
         self.setLayout(layout)
 
