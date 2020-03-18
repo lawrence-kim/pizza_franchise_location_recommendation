@@ -51,7 +51,7 @@ number counts of Pizza School sorted by state
 
 ### Brand Recommendation  
 <img width="379" alt="pizza_brandrecommendation" src="https://user-images.githubusercontent.com/57359849/76918345-7cf0cf00-6909-11ea-8dae-172421889ca0.PNG">  
-Pizza Hut is recommended With the input location Seoul Gannam district and initial investment of 1 Billion KRW.  
+Pizza Hut is recommended after inputting location Seoul Gannam district and initial investment of 1 Billion KRW.  
 
 ### Sample Map  
 <img width="601" alt="pizza_samplemap" src="https://user-images.githubusercontent.com/57359849/76918352-7febbf80-6909-11ea-8a59-1d8a9e218843.PNG">  
