@@ -26,14 +26,12 @@ class mywindows(QWidget) :
         self.pushButton2.clicked.connect(self.pushButton2Clicked)
         self.pushButton3 = QPushButton('Chart')  
         self.pushButton3.clicked.connect(self.pushButton3Clicked)
-        self.pushButton4 = QPushButton('Visualization')  
+        self.pushButton4 = QPushButton('Brand Recommendation')  
         self.pushButton4.clicked.connect(self.pushButton4Clicked)
-        self.pushButton5 = QPushButton('Brand Recommendation')  
+        self.pushButton5 = QPushButton('Sample Map')  
         self.pushButton5.clicked.connect(self.pushButton5Clicked)
-        self.pushButton6 = QPushButton('Sample Map')  
+        self.pushButton6 = QPushButton('Selected Map')  
         self.pushButton6.clicked.connect(self.pushButton6Clicked)
-        self.pushButton7 = QPushButton('Selected Map')  
-        self.pushButton7.clicked.connect(self.pushButton7Clicked)
         self.label1 = QLabel("")
        
 
@@ -56,9 +54,7 @@ class mywindows(QWidget) :
         self.pushButton6.setSizePolicy(
             QSizePolicy.Preferred,
             QSizePolicy.Expanding)
-        self.pushButton7.setSizePolicy(
-            QSizePolicy.Preferred,
-            QSizePolicy.Expanding)
+
 
 
         image = QLabel(self)
@@ -82,7 +78,6 @@ class mywindows(QWidget) :
         bottomLayout.addWidget(self.pushButton4, 5, 1)
         bottomLayout.addWidget(self.pushButton5, 6, 1)
         bottomLayout.addWidget(self.pushButton6, 7, 1)
-        bottomLayout.addWidget(self.pushButton7, 8, 1)
 
         layout = QVBoxLayout()
         layout.addLayout(topLayout)
@@ -100,17 +95,14 @@ class mywindows(QWidget) :
 
     def pushButton3Clicked(self) : # chart
         os.system('python project-chart.py')
-    
-    def pushButton4Clicked(self) : # visualization
-        os.system('python project-visualization.py')
         
-    def pushButton5Clicked(self) : # ml1 recommend brand by location and budget
+    def pushButton4Clicked(self) : # ml1 recommend brand by location and budget
         os.system('python project-brandrecommendation.py')
 
-    def pushButton6Clicked(self) : # map of all the pizza stores with commercial area clusters
+    def pushButton5Clicked(self) : # map of all the pizza stores with commercial area clusters
         os.system('python project-samplemap.py')
 
-    def pushButton7Clicked(self) : # ml2 map according to input location and the number of cluster
+    def pushButton6Clicked(self) : # ml2 map according to input location and the number of cluster
         os.system('python project-selectedmap.py')
     
 
